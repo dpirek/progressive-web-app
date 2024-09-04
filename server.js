@@ -16,10 +16,11 @@ function contentType(url) {
     gif: 'image/gif',
     woff: 'font/woff',
     map: 'application/octet-stream',
-    wasm: 'application/wasm'
+    wasm: 'application/wasm',
+    ico: 'image/x-icon',
+    json: 'application/json',
+    svg: 'image/svg+xml',
   };
-
-  
 
   if(contentTypes[ext] === undefined) return contentTypes['html'];
 
