@@ -20,7 +20,7 @@ header-component {
   text-align: left;
   background-color: #eee;
   color: #fff;
-  padding: 0.7rem 1rem;
+  padding: 0.7rem 1rem 0.4rem 1rem;
   flex-shrink: 0;
 }
 

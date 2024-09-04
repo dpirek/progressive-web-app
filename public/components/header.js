@@ -4,7 +4,7 @@ class Header extends HTMLElement {
     }
 
     connectedCallback() {
-      this.innerHTML = `<img src="/images/pwa.svg" class="logo" />`;
+      this.innerHTML = `<img src="/images/pwa.svg" alt="pwa" class="logo" />`;
   }
 }
 
