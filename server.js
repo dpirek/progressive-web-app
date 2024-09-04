@@ -67,31 +67,6 @@ function respondPage(res, { html }) {
   `);
 }
 
-function proxy(req, res) {
-  const url = req.url;
-
-  console.log('proxying to:', url);
-
-  const options = {
-    hostname: PROXY_HOST,
-    port: PROXY_PORT,
-    path: url,
-    method: 'GET',
-    headers: req.headers
-  };
-
-  const proxyReq = http.request(options, (proxyRes) => {
-    res.writeHead(proxyRes.statusCode, proxyRes.headers);
-    proxyRes.pipe(res, { end: true });
-  });
-
-  req.pipe(proxyReq, { end: true });
-
-  proxyReq.on('error', (e) => {
-    console.error('proxyReq error', e);
-  });
-}
-
 const server = http.createServer((req, res) => {
   const url = req.url;
   if(url === '/test-page') return respondPage(res, {html: `<div>test</div>`});
